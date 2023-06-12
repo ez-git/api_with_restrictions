@@ -19,7 +19,6 @@ class AdvertisementViewSet(ModelViewSet):
     filterset_class = AdvertisementFilter
     ordering_fields = ["created_at", "title"]
     throttle_classes = [UserRateThrottle, AnonRateThrottle]
-    permission_classes = [IsAuthenticated, IsOwnerOrReadOnly]
 
     def get_permissions(self):
         """Получение прав для действий."""
